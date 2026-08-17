@@ -3238,4 +3238,95 @@ input, select, textarea {
     margin-top: 15px;
 }
 }
+/* ==========================================================================
+   AGE GATE OPTIMIZED FOR MOBILE & DESKTOP
+   ========================================================================== */
+.age-gate-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh; /* Altezza dinamica per i browser mobile */
+    background-color: rgba(0, 0, 0, 0.94);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px);
+}
 
+.age-gate-box {
+    background: #ffffff;
+    padding: 2em 1.5em;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 420px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    color: #333333;
+    box-sizing: border-box;
+}
+
+.age-gate-box h2 {
+    color: #333333 !important;
+    font-size: 1.6em !important;
+    margin-bottom: 0.4em !important;
+}
+
+.age-gate-box p {
+    font-size: 0.95em !important;
+    line-height: 1.4 !important;
+    margin-bottom: 1em !important;
+    color: #555555 !important;
+}
+
+.age-gate-box h3 {
+    margin: 0.8em 0 !important;
+    font-size: 1.1em !important;
+    color: #333333 !important;
+}
+
+.age-gate-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 1.2em;
+    flex-wrap: wrap;
+}
+
+.age-gate-buttons .button {
+    min-width: 120px;
+    padding: 0 1.5em !important;
+    height: 2.8em !important;
+    line-height: 2.8em !important;
+    font-size: 0.9em !important;
+}
+
+.age-error-msg {
+    color: #dc3545 !important;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+/* Adattamento specifico per schermi smartphone */
+@media screen and (max-width: 480px) {
+    .age-gate-box {
+        padding: 1.5em 1em;
+    }
+    
+    .age-gate-buttons {
+        flex-direction: column; /* Dispone i pulsanti uno sopra l'altro sui telefoni stretti */
+        width: 100%;
+    }
+
+    .age-gate-buttons .button {
+        width: 100% !important;
+        margin-bottom: 8px;
+    }
+}
